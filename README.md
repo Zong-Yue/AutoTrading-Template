@@ -13,7 +13,7 @@ RSI 是 Relative Strength Index 的縮寫，1978年由Wells Wilder發明，是�
 
 因此，在經過 training_data 線性回歸後，我們取 : 
 
-- BUY		REI < 25
+- BUY		RSI < 25
 - SELL		RSI > 65
 
 ## Requirments
@@ -31,3 +31,14 @@ matplotlib : 3.5.1
 ## Use
 
     python trade.py [training_data.csv] [testing_data.csv] [output.csv]
+
+## Code 簡述
+
+- 第七天前的策略 :
+  - 以收盤價與開盤價比較
+    - 漲幅超過 delta 則買
+    - 跌幅超過 delta 則賣
+  - delta defult = 0.005
+- 第七天後的策略 :
+  - RSI < 25		BUY
+  - RSI > 65		SELL
